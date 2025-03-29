@@ -23,14 +23,22 @@ def obter_links_pdfs(url):
     links_pdfs = []
     for links in todos_links:
         href = links['href']
-        href_lower = href.lower()  # Converte o link para minúsculas uma vez para otimizar
-        if 'anexo' in href_lower and href_lower.endswith('.pdf'):
+        href_lower = href.lower()
+        if href_lower.endswith('.pdf'):
             # Se o link for relativo, converte para absoluto
             href_completo = urljoin(url, href)
             links_pdfs.append(href_completo)
 
     return links_pdfs
 
+def filtrar_pdfs_desejados(links_pdfs):
+    links_pdfs_filtrados = []
+    for link in links_pdfs:
+        if "anexo" in link.lower():
+            links_pdfs_filtrados.append(link)
+    if not links_pdfs_filtrados:
+        print("Nenhum PDF encontrado.")
+    return links_pdfs_filtrados
 
 def baixar_e_compactar_pdfs(links_pdfs):
     # Verifica se não há links PDF encontrados
@@ -59,4 +67,5 @@ def baixar_e_compactar_pdfs(links_pdfs):
 
 url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
 links_pdfs = obter_links_pdfs(url)
-baixar_e_compactar_pdfs(links_pdfs) 
+links_pdfs_filtrados = filtrar_pdfs_desejados(links_pdfs)
+baixar_e_compactar_pdfs(links_pdfs_filtrados)
