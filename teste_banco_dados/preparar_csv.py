@@ -16,7 +16,7 @@ def concatenar_csv_de_zips(arquivos_zip):
     caminho_saida = diretorio_atual/"despesas_2023_2024.csv"
     df_final.to_csv(caminho_saida, index=False, encoding="utf-8")
 
-    print(f"Arquivo consolidado salvo em: {caminho_saida}")
+    print(f"Arquivo concatenado salvo em: {caminho_saida}")
 
 
 diretorio_atual = Path(__file__).parent
