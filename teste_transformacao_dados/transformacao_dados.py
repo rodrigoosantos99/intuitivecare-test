@@ -26,9 +26,26 @@ def extrair_e_salvar_csv(caminho_pdf):
         print("Nenhuma tabela encontrada.")
         return None
     
-# Caminho do PDF
+def substituir_abreviacoes(caminho_csv):
+    substituicoes = {"OD": "Seg. Odontológica", "AMB": "Seg. Ambulatorial"}
+    
+    if caminho_csv:
+        df = pd.read_csv(caminho_csv)
+        df.columns = df.columns.to_series().apply(lambda x: substituicoes.get(x, x))
+        df.replace(substituicoes, inplace=True)
+        
+        caminho_csv_substituido = caminho_csv.parent / "tabelas_extraidas.csv"
+        df.to_csv(caminho_csv_substituido, index=False, encoding='utf-8')
+        print(f"Substituições feitas e CSV atualizado: {caminho_csv_substituido}")
+        return caminho_csv_substituido
+    else:
+        print("Arquivo CSV não encontrado.")
+        return None
+    
+
 diretorio_atual = Path(__file__).parent
 caminho_pdf = diretorio_atual / "Anexo_I.pdf"
 
-# Chamando as funções
+
 caminho_csv = extrair_e_salvar_csv(caminho_pdf)
+substituir_abreviacoes(caminho_csv)
