@@ -41,11 +41,25 @@ def substituir_abreviacoes(caminho_csv):
     else:
         print("Arquivo CSV não encontrado.")
         return None
-    
+
+def compactar_em_zip(caminho_csv):
+    if caminho_csv:
+        diretorio_saida = caminho_csv.parent
+        caminho_zip = diretorio_saida / "Teste_Rodrigo.zip"
+        
+        with zipfile.ZipFile(caminho_zip, 'w') as zipf:
+            zipf.write(caminho_csv, arcname=caminho_csv.name)
+        
+        print(f"Arquivo ZIP salvo em: {caminho_zip}")
+    else:
+        print("Arquivo CSV não encontrado para compactar.")    
+
+
 
 diretorio_atual = Path(__file__).parent
 caminho_pdf = diretorio_atual / "Anexo_I.pdf"
 
 
 caminho_csv = extrair_e_salvar_csv(caminho_pdf)
-substituir_abreviacoes(caminho_csv)
+caminho_csv_substituido = substituir_abreviacoes(caminho_csv)
+compactar_em_zip(caminho_csv_substituido)
