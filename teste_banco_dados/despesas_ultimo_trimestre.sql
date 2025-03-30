@@ -7,3 +7,5 @@ WHERE d4.descricao = 'EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA
 GROUP BY oa.razao_social
 ORDER BY total_despesas DESC
 LIMIT 10;
+
+
