@@ -1,2 +1,4 @@
 venv-test/
-anexos_pdfs.zip
+*.zip
+tabelas_extraidas.csv
+Teste_Rodrigo.zip
