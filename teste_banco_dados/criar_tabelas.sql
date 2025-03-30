@@ -1,0 +1,67 @@
+CREATE TABLE despesas_2023 (
+    DATA DATE,
+    REG_ANS VARCHAR(50),
+    CD_CONTA_CONTABIL VARCHAR(50),
+    DESCRICAO TEXT,
+    VL_SALDO_INICIAL NUMERIC,
+    VL_SALDO_FINAL NUMERIC
+);
+
+CREATE TABLE despesas_1t_2024 (
+    DATA DATE,
+    REG_ANS VARCHAR(50),
+    CD_CONTA_CONTABIL VARCHAR(50),
+    DESCRICAO TEXT,
+    VL_SALDO_INICIAL NUMERIC,
+    VL_SALDO_FINAL NUMERIC
+);
+
+CREATE TABLE despesas_2t_2024 (
+    DATA DATE,
+    REG_ANS VARCHAR(50),
+    CD_CONTA_CONTABIL VARCHAR(50),
+    DESCRICAO TEXT,
+    VL_SALDO_INICIAL NUMERIC,
+    VL_SALDO_FINAL NUMERIC
+);
+
+CREATE TABLE despesas_3t_2024 (
+    DATA DATE,
+    REG_ANS VARCHAR(50),
+    CD_CONTA_CONTABIL VARCHAR(50),
+    DESCRICAO TEXT,
+    VL_SALDO_INICIAL NUMERIC,
+    VL_SALDO_FINAL NUMERIC
+);
+
+CREATE TABLE despesas_4t_2024 (
+    DATA DATE,
+    REG_ANS VARCHAR(50),
+    CD_CONTA_CONTABIL VARCHAR(50),
+    DESCRICAO TEXT,
+    VL_SALDO_INICIAL NUMERIC,
+    VL_SALDO_FINAL NUMERIC
+);
+
+CREATE TABLE operadoras_ativas (
+    Registro_ANS VARCHAR(50),
+    CNPJ VARCHAR(20),
+    Razao_Social TEXT,
+    Nome_Fantasia TEXT,
+    Modalidade TEXT,
+    Logradouro TEXT,
+    Numero VARCHAR(10),
+    Complemento TEXT,
+    Bairro TEXT,
+    Cidade TEXT,
+    UF VARCHAR(2),
+    CEP VARCHAR(10),
+    DDD VARCHAR(3),
+    Telefone VARCHAR(15),
+    Fax VARCHAR(15),
+    Endereco_eletronico TEXT,
+    Representante TEXT,
+    Cargo_Representante TEXT,
+    Regiao_de_Comercializacao TEXT,
+    Data_Registro_ANS DATE
+);
