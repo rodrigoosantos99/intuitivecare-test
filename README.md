@@ -57,28 +57,30 @@ Acesse o **pgAdmin4** e execute os seguintes comandos SQL:
 
 1. **Criar o Banco de Dados**
 
-CREATE DATABASE contabilidade;
+`CREATE DATABASE contabilidade;`
 
 
 2. **Criar as Tabelas**
 Abra o banco `contabilidade` e execute:
-criar_tabelas.sql
+`criar_tabelas.sql`
 
 3. **Importar os Arquivos CSV**
 Crie manualmente a pasta `C:\PostgreSQL\Uploads\` e copie os arquivos CSV gerados pelo script `preparar_csv.py` para essa pasta.
 
 Depois, execute:
-importar_csv.sql
+`importar_csv.sql`
 
 ### 3.3. Consultas Analíticas
 
 1. **Empresas que mais gastaram nos últimos 3 meses**
+
 Abra o query tool do pgadmin4 e execute o seguinte script sql:
-despesas_ultimo_trimestre.sql
+`despesas_ultimo_trimestre.sql`
 
 2. **Empresas que mais gastaram no último ano**
+
 Abra o query tool do pgadmin4 e execute o seguinte script sql:
-despesas_ultimo_ano.sql
+`despesas_ultimo_ano.sql`
 
 ---
 
