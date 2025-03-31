@@ -37,7 +37,7 @@ O script `transformacao_dados.py` realiza as seguintes etapas:
 
 ### Como Executar
 ```bash
-python transformacao_dados/script_transformacao.py
+python transformacao_dados/transforcamao_dados.py
 ```
 Basta abrir no editor de usa preferência e executar o script
 ---
