@@ -26,6 +26,7 @@ def extrair_e_salvar_csv(caminho_pdf):
         print("Nenhuma tabela encontrada.")
         return None
     
+
 def substituir_abreviacoes(caminho_csv):
     substituicoes = {"OD": "Seg. Odontológica", "AMB": "Seg. Ambulatorial"}
     
@@ -54,12 +55,12 @@ def compactar_em_zip(caminho_csv):
     else:
         print("Arquivo CSV não encontrado para compactar.")    
 
-
-
-diretorio_atual = Path(__file__).parent
-caminho_pdf = diretorio_atual / "Anexo_I.pdf"
-
-
-caminho_csv = extrair_e_salvar_csv(caminho_pdf)
-caminho_csv_substituido = substituir_abreviacoes(caminho_csv)
-compactar_em_zip(caminho_csv_substituido)
+def funcao_principal():
+    diretorio_atual = Path(__file__).parent
+    caminho_pdf = diretorio_atual / "Anexo_I.pdf"
+    
+    caminho_csv = extrair_e_salvar_csv(caminho_pdf)
+    caminho_csv_substituido = substituir_abreviacoes(caminho_csv)
+    compactar_em_zip(caminho_csv_substituido)
+    
+funcao_principal()
